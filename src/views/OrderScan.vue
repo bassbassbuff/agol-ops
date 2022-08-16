@@ -101,7 +101,7 @@ sending the value CVG to the parent component under the action favoriteAirport:
                 
                   const order_no = this.order_no
                   const statusdata = JSON.stringify({ 
-                    status : this.status
+                    order_status : this.status
                   })
                   console.log(this.status)                 
                   await axios

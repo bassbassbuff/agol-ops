@@ -22,7 +22,7 @@ const routes = [
     component: SafetyInspection,
   },
   {
-    path: "/safety-checklist",
+    path: "/safety-checklist/:id",
     name: "Safetyform",
     component: Safetyform,
   },
