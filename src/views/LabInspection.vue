@@ -2,7 +2,7 @@
     <div class="container">
         <div class="columns is-multiline">
             <div class="column is-12">
-                <h1 class="title">Saaaafety</h1>
+                <h1 class="title">Lab Inspection</h1>
             </div>
                 
             
@@ -10,12 +10,9 @@
                 <table class="table is-fullwidth">
                     <thead>
                         <tr>
-                            <th>ID</th>
+                            <th>Order No.</th>
                             <th>Truck</th>
-                            <th>Transporter</th>
                             <th>Trailer</th>                            
-                            <th>Transporter</th>
-                            
                             <th></th>
                         </tr>
                     </thead>
@@ -26,16 +23,13 @@
                             v-bind:key="order.id">                                
                                 <td>{{ order.id }}</td>
                                 <td>{{ order.truck_details['registration'] }}</td>
-                                <td>{{ order.truck_details['transporter'] }}</td>
                                 <td>{{ order.trailer_details['registration'] }}</td>
-                                <td>{{ order.trailer_details['transporter'] }}</td>
-                                
                                 <td>
                                 <button>
 
                                     <!-- {{orders}} -->
                                     
-                                <router-link :to="`/safety-checklist/${order.id}`" class="button is-light">Edit</router-link>
+                                <router-link :to="`/lab-details/${order.id}`" class="button is-light">Edit</router-link>
                                 <!-- <router-link :to="{ name: 'Safetyform', params: { id: order.id }}" class="button is-light">Edit</router-link> -->
                                 </button>
                                 </td>
@@ -55,7 +49,7 @@
     // import { toast } from 'bulma-toast'
 
     export default {
-        name: 'SafetyInspection',
+        name: 'LabInspection',
         data() {
             return {
                 orders: [],
@@ -72,7 +66,7 @@
                 this.showPreviousButton = false
 
                 await axios
-                    .get(`/checklist/`)
+                    .get(`/lab-inspection/`)
                     .then(response => {
                         console.log(response.data)
                         this.orders = response.data

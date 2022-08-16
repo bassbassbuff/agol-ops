@@ -13,7 +13,8 @@ export default function useSafetyForm() {
     const orderid = ref(route.params.id)
 
     const getTruck = async () => {
-        let response = await axios.get(`/checklist/${orderid.value}`)
+        let response = await axios.get(`/order/${orderid.value}`)
+        console.log(response.data)
         truckid.value = response.data.truck_details.id
         trailerid.value = response.data.trailer_details.id
         

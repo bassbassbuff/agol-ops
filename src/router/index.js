@@ -3,7 +3,9 @@ import Home from "../views/Home.vue";
 import OrderScan from "../views/OrderScan.vue";
 import SafetyInspection from "../views/SafetyInspection.vue";
 import Safetyform from "../components/Safetyform.vue";
+import LabDetails from "../components/LabDetails.vue";
 import Login from "../views/Login.vue";
+import LabInspection from "../views/LabInspection.vue"
 
 const routes = [
   {
@@ -30,6 +32,16 @@ const routes = [
     path: "/login",
     name: "Login",
     component: Login,
+  },
+  {
+    path: "/lab-inspection",
+    name: "LabInspection",
+    component: LabInspection,
+  },
+  {
+    path: "/lab-details/:id",
+    name: "LabDetails",
+    component: LabDetails,
   },
   {
     path: "/about",
