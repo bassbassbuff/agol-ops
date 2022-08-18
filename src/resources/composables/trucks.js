@@ -10,6 +10,7 @@ export default function useSafetyForm() {
     const trailerid = ref('')
     const truckid = ref('')
     const errors = ref('')
+    const labResults = ref({})
     const orderid = ref(route.params.id)
 
     const getTruck = async () => {
@@ -25,6 +26,12 @@ export default function useSafetyForm() {
     const getQuestions = async () => {
         let response = await axios.get('/checklist-questions/')
         questions.value = response.data;
+    }
+
+    const getLabResults = async () => {
+        let response = await axios.get(`/lab-results/${orderid.value}`)
+        console.log(response.data)
+        labResults.value = response.data;
     }
 
     // const storeCompany = async (data) => {
@@ -59,11 +66,13 @@ export default function useSafetyForm() {
     return {
         getTruck,
         getQuestions,
+        getLabResults,
         trailerid,
         truckid,
         orderid,
         questions,
         truck,
-        trailer
+        trailer,
+        labResults
     }
 }

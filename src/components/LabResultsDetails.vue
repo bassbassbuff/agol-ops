@@ -5,9 +5,9 @@ import {onMounted} from "vue";
 
 export default {
 setup() {
-  const { truck, trailer, truckid, trailerid, truck_pressure, oxygen_content, methane_content, orderid, getTruck } = useSafetyForm()
+  const { truck, trailer, truckid, trailerid, labResults, orderid, getTruck, getLabResults } = useSafetyForm()
   
-  onMounted(getTruck())
+  onMounted(getTruck(), getLabResults())
 
   return {
     truckid,
@@ -15,9 +15,7 @@ setup() {
     orderid,
     truck,
     trailer,
-    truck_pressure,
-    oxygen_content,
-    methane_content
+    labResults
 
 
     
@@ -50,7 +48,7 @@ methods: {
           };
           console.log(payload)
           await axios
-          .post(`/lab-details/`, payload)
+          .post(`/lab-resultsdetails/`, payload)
           .then((response) => {
             console.log(response.data)
           })
@@ -67,29 +65,27 @@ methods: {
     <h4>Trailer Reg: {{ trailer }} </h4>
     </div>
   <form @submit.prevent="submitForm">
-    <h3>Lab Details</h3>
-    
-    <div class="field">
-        <label>Truck Pressure</label>
-        <div class="control">
-            <input type="number" name="truck_pressure" class="input" v-model="truck_pressure">
-        </div>
-    </div>
+    <h3>Lab Results</h3>
 
-    <div class="field">
-        <label>Oxygen content % Volume</label>
-        <div class="control">
-            <input type="number" name="oxygen_content" class="input" v-model="oxygen_content">
-        </div>
-    </div>
-
-    <div class="field">
-        <label>Methane content % Volume</label>
-        <div class="control">
-            <input type="number" name="methane_content" class="input" v-model="methane_content">
-        </div>
-    </div>
-    <button type="submit">Submit</button>
+      <h4>Oxygen: {{ labResults.oxygen }}</h4>
+      <h4>Pressure: {{ labResults.pressure }}</h4>
+      <h4>Nitrogen: {{ labResults.nitrogen }}</h4>
+      <h4>Methane: {{ labResults.methane }}</h4>
+      <div>
+      <button type="submit" value="Proceed">Proceed</button>
+      </div>
+      <div>
+      <button type="submit" value="Seal">Seal</button>
+      </div>
+      <div>
+      <button type="submit" value="Vent">Vent</button>
+      </div>
+      <div>
+      <button type="submit" value="Reject">Reject</button>
+      </div>
+      <div>
+      <button type="submit" value="Back">Go To List</button>
+      </div>
   </form>
 </template>
 

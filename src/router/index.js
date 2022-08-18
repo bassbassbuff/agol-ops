@@ -6,7 +6,9 @@ import Safetyform from "../components/Safetyform.vue";
 import LabDetails from "../components/LabDetails.vue";
 import Login from "../views/Login.vue";
 import LabInspection from "../views/LabInspection.vue"
-
+import LabResults from "../views/LabResults.vue"
+import LabResultsDetails from "../components/LabResultsDetails.vue"
+ 
 const routes = [
   {
     path: "/",
@@ -42,6 +44,16 @@ const routes = [
     path: "/lab-details/:id",
     name: "LabDetails",
     component: LabDetails,
+  },
+  {
+    path: "/lab-results",
+    name: "LabResults",
+    component: LabResults,
+  },
+  {
+    path: "/lab-results/:id",
+    name: "LabResultsDetails",
+    component: LabResultsDetails,
   },
   {
     path: "/about",
