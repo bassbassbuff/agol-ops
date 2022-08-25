@@ -38,46 +38,12 @@ sending the value CVG to the parent component under the action favoriteAirport:
 
                             <button @click="$emit('favoriteAirport', 'CVG')" class="button is-success">Submit</button>
 -->
-                            <button value="Scanned" class="button is-success">Submit</button>
+                            <button value="SAFETY" class="button is-success">Submit</button>
                         </div>
                     </div>                  
                 </form>
             </div>
-        </div>
-
-        <div class="column is-12">
-               
-                <table class="table is-fullwidth">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Destination</th>
-                            <th>Loaded Qty</th>                            
-                            <th>Status</th>
-                            <th>Created at</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr>                                
-                                <td>{{ order.id }}</td>
-                                <td>{{ order.destination }}</td>
-                                <td>{{ order.loaded_quantity }}</td>
-                                <td>{{ order.status }}</td>
-                                <td>{{ order.created_at }}</td>                               
-                        </tr>
-                    </tbody>
-
-                    <!-- <div class="field">
-                        <div class="control">
-                            <button class="button is-success" @click="scan()" >Scan</button>
-                        </div>
-                    </div> -->
-                </table>
-        </div>
-
-
+        </div> 
     </div>
 </template>
 
@@ -91,7 +57,7 @@ sending the value CVG to the parent component under the action favoriteAirport:
         name: 'OrderScan',
         data() {
             return {
-                status: 'Scanned',
+                status: 'SAFETY',
                 order_no: '',
                 order: {}
             }

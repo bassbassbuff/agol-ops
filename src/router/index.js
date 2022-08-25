@@ -8,7 +8,11 @@ import Login from "../views/Login.vue";
 import LabInspection from "../views/LabInspection.vue"
 import LabResults from "../views/LabResults.vue"
 import LabResultsDetails from "../components/LabResultsDetails.vue"
- 
+import LabVent from "../views/LabVent.vue"
+import LabVentDetails from "../components/LabVentDetails.vue"
+import Loading from "../views/Loading.vue"
+import LoadingDetails from "../components/LoadingDetails.vue"
+
 const routes = [
   {
     path: "/",
@@ -54,6 +58,26 @@ const routes = [
     path: "/lab-results/:id",
     name: "LabResultsDetails",
     component: LabResultsDetails,
+  },
+  {
+    path: "/lab-vent/",
+    name: "LabVent",
+    component: LabVent,
+  },
+  {
+    path: "/lab-vent/:id",
+    name: "LabVentDetails",
+    component: LabVentDetails,
+  },  
+  {
+    path: "/loading",
+    name: "Loading",
+    component: Loading,
+  },  
+  {
+    path: "/loading/:id",
+    name: "LoadingDetails",
+    component: LoadingDetails,
   },
   {
     path: "/about",

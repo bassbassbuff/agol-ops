@@ -60,37 +60,6 @@ data() {
               // questions:[{question: '', value:''}]
             }
 },
-// methods: {
-//       async submitForm() {
-
-//         console.log('Methods')
-         
-//           let config = {
-//             headers: {
-//               "Content-Type": "application/json",
-//               "Access-Control-Allow-Origin": "http://localhost:8000/",
-//             },
-//           };
-
-//           const payload = {
-//             order: this.orderid,
-//             truck: this.truckid,
-//             trailer: this.trailerid,
-//             truck_pressure: this.truck_pressure,
-//             oxygen_content: this.oxygen_content,
-//             methane_content: this.methane_content
-
-            
-//           };
-//           console.log(payload)
-//           await axios
-//           .post(`/lab-results/`, payload)
-//           .then((response) => {
-//             console.log(response.data)
-//           })
-//     },
-            
-//   }
 }
 
 </script>
@@ -110,17 +79,11 @@ data() {
       <button @click="submitForm" type="submit" value="LOADING">Proceed</button>
       </div>
       <div>
-      <button @click="submitForm" type="submit" value="SEAL">Seal</button>
-      </div>
-      <div>
-      <button @click="submitForm" type="submit" value="VENT">Vent</button>
-      </div>
-      <div>
       <button @click="submitForm" type="submit" value="REJECT">Reject</button>
       </div>
       
       <button>
-        <router-link to="/lab-results/">Back</router-link>
+        <router-link to="/lab-vent/">Back</router-link>
       </button>
 </template>
 

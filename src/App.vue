@@ -5,6 +5,9 @@
     <router-link to="/safety-inspection">Safety Inspection</router-link> |
     <router-link to="/lab-inspection">LabInspection</router-link> |
     <router-link to="/lab-results">Lab Results</router-link> |
+    <router-link to="/lab-vent">Lab Vent</router-link> |
+    <router-link to="/loading">Loading</router-link> |
+    
     <router-link to="/about">About</router-link> |    
     
     <router-link to="/login">Login</router-link> |
